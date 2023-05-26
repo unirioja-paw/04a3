@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+
+  <script type="text/javascript">
+    window.onload = function () {
+      var btns = document.querySelectorAll("button");
+      Array.from(btns).forEach(b => b.onclick = saluda)
+
+      var enlace = document.getElementById('enlace')
+      enlace.onclick = function (event) {
+        console.log('hola')
+        event.preventDefault()
+      }
+    };
+
+    function saluda(evt) {
+      console.log(evt.type) // tipo de evento 
+      const target = evt.target; // elemento que origina el evento
+      console.log(target.value)
+      console.log(target.name)
+    };      
+    
+    function moo() {
+      console.log('hola')
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Ejemplo del objeto Event</h1>
+
+  <a href="https://www.unirioja.es" id="enlace">unirioja</a>
+  <form>
+    <button type="submit" name="greeting" value="hello">Di Hola</button>
+    <button type="submit" name="greeting" value="bye">Adiós</button>
+  </form>
+
+
+
+</body>
+
+</html>

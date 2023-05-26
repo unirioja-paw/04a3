@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+
+  <script>
+    window.addEventListener("load", init);
+
+    function init() {
+      let btn = document.getElementById('boton');
+
+      // target.addEventListener(
+      //   eventName,
+      //   callback,
+      //   useCapture); // true=Event capturing, false=Event bubbling
+
+      btn.addEventListener("click", function (e) { console.log('boton 1') }, false);
+      btn.addEventListener("click", function (e) { console.log('boton 2') }, true);
+      btn.addEventListener("click", function (e) { console.log('boton 3') }, false);
+      btn.addEventListener("click", function (e) { console.log('boton 4') }, true);
+
+      let c = document.getElementById('container');
+      c.addEventListener("click", function (e) { console.log('container 1') }, false);
+      c.addEventListener("click", function (e) { console.log('container 2') }, true);
+      c.addEventListener("click", function (e) { console.log('container 3') }, false);
+      c.addEventListener("click", function (e) { console.log('container 4') }, true);
+
+      document.addEventListener("click", function (e) { console.log('document 1') }, false);
+      document.addEventListener("click", function (e) { console.log('document 2') }, true);
+      document.addEventListener("click", function (e) { console.log('document 3') }, false);
+      document.addEventListener("click", function (e) { console.log('document 4') }, true);
+
+    }
+
+  </script>
+
+</head>
+
+<body>
+
+  <div id="container">
+    <button id="boton">Incrementame: 0</button>
+  </div>
+
+
+</body>
+
+</html>

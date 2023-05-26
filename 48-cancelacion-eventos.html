@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+
+  <script>
+    window.onload = function () {
+      var container = document.getElementById("container");
+      container.addEventListener("click", cuenta, true);  // fase de captura
+    }
+
+    function cuenta(e) {
+      var src = e.target;
+      if (src.nodeName.toLowerCase() !== "button") return;
+
+      parts = src.innerHTML.split(": ");
+      parts[1] = parseInt(parts[1], 10) + 1;
+      src.innerHTML = parts[0] + ": " + parts[1];
+
+      e.stopPropagation();  // Paro la propagación
+    }
+
+  </script>
+
+</head>
+
+<body>
+  <div id="container">
+    <button onclick='alert("No deberías ver esto")'>Incrementame: 0</button>
+    ... Igual que antes
+  </div>
+
+
+
+</body>
+
+</html>

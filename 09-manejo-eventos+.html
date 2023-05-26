@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+
+  <script type="text/javascript">
+    window.onload = function () {
+      var btn = document.getElementById("send");
+      btn.onclick = function () { console.log('Opcion 3'); };
+      btn.addEventListener("click",
+        function () {
+          console.log('Opcion 4');
+        }, false
+      );
+    };
+
+  </script>
+
+</head>
+
+<body>
+  <h1>Registro de manejadores de eventos</h1>
+
+  <button type="submit" id="send" name="submit" value="subscribe" onclick="console.log('Opcion 1')">Subscribe</button>
+
+  <script type="text/javascript">
+    // document.getElementById("send").onclick = function () {
+    //   console.log('Opcion 2');
+    // };
+
+    document.getElementById("send").onclick = handleClickOnSubscribe;
+
+    function handleClickOnSubscribe() {
+      console.log('Opcion 2b');
+    }
+
+  </script>
+
+
+</body>
+
+</html>

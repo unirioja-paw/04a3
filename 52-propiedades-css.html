@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+  <link rel="stylesheet" href="assets/css/50.css" />
+
+  <script type="text/javascript">
+    function changeColor(color) {
+      let txt = document.getElementById("txt");
+      txt.style.color = color;
+      txt.style.borderBottom = "1px solid #000";
+      console.log(txt.style.color)
+    }
+  </script>
+
+</head>
+
+<body>
+  <h1>Estableciendo propiedades CSS</h1>
+
+  <div id="txt" class="echo">TODO write content</div>
+  
+  <button type="submit" value="red" onclick="changeColor('#F00')">Cambiar a rojo</button>
+  <button type="submit" value="blue" onclick="changeColor('#00F')">Cambiar a azul</button>
+
+
+
+</body>
+
+</html>

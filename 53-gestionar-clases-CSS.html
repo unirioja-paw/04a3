@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+  <link rel="stylesheet" href="assets/css/50.css" />
+
+  <script type="text/javascript">
+    function changeClass(className) {
+      let txt = document.getElementById("txt");
+      txt.classList.remove('echo-red')
+      txt.classList.remove('echo-blue')
+      txt.classList.add(className)
+    }
+
+    function toggleClass(className) {
+      let txt = document.getElementById("txt");
+      txt.classList.toggle(className)
+    }
+  </script>
+
+</head>
+
+<body>
+  <h1>Estableciendo propiedades CSS</h1>
+
+  <div id="txt" class="echo">TODO write content</div>
+
+  <button type="submit" value="red" onclick="changeClass('echo-red')">Cambiar a rojo</button>
+  <button type="submit" value="blue" onclick="changeClass('echo-blue')">Cambiar a azul</button>
+  <button type="submit" value="red" onclick="toggleClass('echo-border-green')">Cambiar borde</button>
+
+
+
+</body>
+
+</html>

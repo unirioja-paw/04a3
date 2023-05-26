@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+</head>
+
+<body>
+
+  <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith#polyfill">Polyfill:
+    Usando startsWith()</a>
+
+  <script type="text/javascript">
+
+    if (String.prototype.startsWith) {
+      console.log(`startsWith supported by this browser (${navigator.userAgent})`)
+    }
+    else {
+      console.log(`startsWith not supported by this browser (${navigator.userAgent})`)
+      Object.defineProperty(String.prototype, 'startsWith', {
+        value: function (search, rawPos) {
+          var pos = rawPos > 0 ? rawPos | 0 : 0;
+          return this.substring(pos, pos + search.length) === search;
+        }
+      });
+    }
+
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>PAW</title>
+
+  <script type="text/javascript">
+    window.onload = function () {
+      var saludoBtn = document.getElementById("saludon");
+      // saludoBtn.onclick = saluda;
+      saludoBtn.onclick = saluda(); // MAL
+    };
+    function saluda() { alert('Hola a todos') }      
+  </script>
+
+</head>
+
+<body>
+
+  <form method="post" action="https://httpbin.org/post">
+    <input type="hidden" name="articuloId" value="1023">
+    <button id="saludon" type="submit" value="Saluda" >Saludar</button>
+  </form>
+
+</body>
+
+</html>

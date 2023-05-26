@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <h1>Ejemplo Manejo de Eventos II</h1>
+  <p>
+    Diseñar un formulario que tenga un cuadro de texto para escribir el número de móvil o email. Añadir al propio cuadro
+    de texto un
+    mensaje de ayuda.
+    <img
+      src="https://res.cloudinary.com/indysigner/image/fetch/f_auto,q_80/w_1600/https://archive.smashing.media/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/bbba30fe-95e5-43c1-b1ef-be5037a0eae2/facebook-signup.png"
+      style="height: 300px;" />
+  </p>
+  <p>
+    Limpiar el valor al hacer foco sobre el input type="text". Es un ejemplo; una alternativa mucho mejor es la
+    propiedad placeholder.
+  </p>
+
+  <section style="display: block;">
+    <div class="signup-form-wrapper">
+      <form>
+        <input type="text" id="email" name="email" value="dirección de email">
+        <div class="signup-form_footer">
+          <button type="submit" name="Submit" value="subscribe">Subscribe</button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+
+  <script type="text/javascript">
+    document.getElementById('email').onfocus = clearBox;
+    function clearBox() {
+      var box = document.getElementById('email')
+      if (box.value == box.defaultValue) {
+        box.value = "";
+      }
+    }
+  </script>
+
+
+  <footer>
+    <ul>
+      <li><a href="https://www.nngroup.com/articles/form-design-placeholders/">Placeholders in Form Fields Are
+          Harmful</a></li>
+    </ul>
+  </footer>
+
+</body>
+
+</html>

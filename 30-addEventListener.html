@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+
+  <script type="text/javascript">
+    window.addEventListener("DOMContentLoaded", init)
+
+    function init() {
+      document
+        .getElementById('link1')
+        .addEventListener('click', saluda)
+
+      var btns = document.querySelectorAll("button")
+      Array.from(btns).forEach(b => b.onclick = saluda)
+
+      document
+        .getElementById('table1')
+        .addEventListener('click', handleClickOnTable)
+    }
+
+
+
+    function saluda(event) {
+      event.preventDefault()
+      console.log('event.type:')
+      console.log(event.type) // tipo de evento 
+      const target = event.target; // elemento que origina el evento
+      console.log('event.target:')
+      console.log(target)
+      console.log(target.value)
+      console.log(target.name)
+    }
+
+    function handleClickOnTable(event) {
+      event.preventDefault()
+      const target = event.target;
+      console.log('event.target:')
+      console.log(target)
+    }
+
+
+  </script>
+</head>
+
+<body>
+  <h1>Ejemplo de addEventListener</h1>
+
+  <form>
+    <button type="submit" name="greeting" value="hello">Di Hola</button>
+    <button type="submit" name="greeting" value="bye">Adiós</button>
+  </form>
+
+  <ul>
+    <li><a href="https://www.unirioja.es" id="link1">unirioja</a></li>
+    <li><a href="https://www.larioja.org" id="link2">larioja.org</a></li>
+    <li><a href="https://twitter.com/unirioja" id="link3">twitter.com/unirioja</a></li>
+  </ul>
+
+  <table id="table1">
+    <thead>
+      <tr>
+        <th>Header content 1</th>
+        <th>Header content 2</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td>Footer content 1</td>
+        <td>Footer content 2</td>
+      </tr>
+    </tfoot>
+    <tbody>
+      <tr>
+        <td>Body content 1</td>
+        <td>Body content 2</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+</body>
+
+</html>

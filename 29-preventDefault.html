@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+
+  <script type="text/javascript">
+    window.onload = function () {
+      document.getElementById("enlace").onclick = function (evt) {
+        var src = evt.target;
+        alert("Quieres ir a " + src.href + " pero no te dejaré");
+        evt.preventDefault();
+      };
+    }     
+  </script>
+
+</head>
+
+<body>
+  <h1>Evitar el comportamiento por defecto del evento</h1>
+  <a id="enlace" href="https://www.unirioja.es">Enlace</a>
+
+
+
+</body>
+
+</html>

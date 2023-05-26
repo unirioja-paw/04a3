@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+
+
+
+</head>
+
+<body>
+
+
+  <script type="text/javascript">
+
+
+    const options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0,
+    };
+
+
+    if (navigator.geolocation) { // feature detection
+      console.log('Su navegador soporta la API de geolocalizacion')
+      navigator.geolocation.getCurrentPosition(success, error, options);
+    } else {
+      alert('Su navegador no soporta la API de geolocalizacion');
+    }
+
+
+    function success(pos) {
+      const crd = pos.coords;
+
+      console.log("Your current position is:");
+      console.log(`Latitude : ${crd.latitude}`);
+      console.log(`Longitude: ${crd.longitude}`);
+      console.log(`More or less ${crd.accuracy} meters.`);
+    }
+
+    function error(err) {
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+    }
+  </script>
+
+</body>
+
+</html>

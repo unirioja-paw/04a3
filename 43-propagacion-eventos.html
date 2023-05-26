@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+
+  <script>
+    // El manejador se pone en el div y sirve para todos los botones. 
+    window.addEventListener("load", function () {
+      var container = document.getElementById("container");
+      container.addEventListener("click", cuenta, false);  // tb funciona con true
+    })
+    function cuenta(e) {
+      var src = e.target;
+
+      if (src.nodeName.toLowerCase() !== "button") {
+        return;  // Si el click no es en un button
+      }
+      parts = src.innerHTML.split(": ");
+      parts[1] = parseInt(parts[1], 10) + 1;
+      src.innerHTML = parts[0] + ": " + parts[1];
+    }
+  </script>
+
+</head>
+
+<body>
+  
+  <div id="container">
+    <button>Incrementame: 0</button>
+    <button>Incrementame dos: 0</button>
+    <button>Incrementame tres: 0</button>
+  </div>
+
+
+</body>
+
+</html>

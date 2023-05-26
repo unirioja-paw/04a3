@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+
+</head>
+
+<body>
+  <h1>Registro de manejadores de eventos</h1>
+
+  <button type="submit" id="send" name="submit" value="subscribe" onclick="console.log('Opcion 1')">Subscribe</button>
+
+  <script>
+    let btn = document.getElementById("send")
+    console.log(btn)
+    btn.onclick = function () {
+      console.log('Opcion 2')
+    }
+  </script>
+
+</body>
+
+</html>
